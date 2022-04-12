@@ -22,6 +22,6 @@
       "~components/*": ["src/components/*"]
     }
   },
-  "include": ["vite.config.ts", "vite-env.d", "**/*.ts", "**/*.tsx"],
+  "include": [".", "vite.config.ts", "vite-env.d"],
   "exclude": ["node_modules"]
 }

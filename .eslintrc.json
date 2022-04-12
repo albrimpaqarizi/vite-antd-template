@@ -1,0 +1,208 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "plugin:react/recommended",
+    "airbnb",
+    "plugin:react-hooks/recommended",
+    "plugin:import/typescript"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      },
+      "typescript": {
+        "project": "."
+      }
+    },
+    "react": {
+      "version": "detect"
+    }
+  },
+  "plugins": ["react", "@typescript-eslint", "prettier", "react-hooks", "import"],
+  "rules": {
+    //  ESLINT RULES
+    //
+    // limits objects if enabled but part of recommaded plugin
+    "no-prototype-builtins": "off",
+    // used still for debuging
+    "no-console": "off",
+    // do not allow fn params reassign
+    "no-param-reassign": "error",
+    // should alwys use template
+    "prefer-template": "error",
+    // not always needed
+    "arrow-parens": "off",
+    // as needed
+    "arrow-body-style": ["warn", "as-needed"],
+    // warn if function does not have a name
+    "func-names": "warn",
+    // error out if condition is constant
+    "no-constant-condition": "error",
+    // limits objects if enabled but part of recommaded plugin
+    // disables nasty underscore dangle
+    "no-underscore-dangle": "error",
+    // will save us debuging time
+    "nonblock-statement-body-position": "error",
+    // this will allow both named and arrow functions as callbacks
+    "prefer-arrow-callback": ["error", { "allowNamedFunctions": true }],
+    // dissabled ts will handle them
+    "dot-notation": "off",
+    "no-use-before-define": "off",
+    "no-implied-eval": "off",
+    "no-throw-literal": "off",
+    "no-return-await": "off",
+    "comma-dangle": "off",
+    "no-unused-vars": "off",
+    // consistent with prettier
+    "max-len": [
+      "warn",
+      {
+        "code": 100,
+        "ignoreStrings": true,
+        "ignoreTemplateLiterals": true,
+        "ignoreComments": true
+      }
+    ],
+    // forced but not everywhere
+    "camelcase": [
+      "error",
+      {
+        // react
+        "allow": ["^UNSAFE_"],
+        "properties": "never",
+        "ignoreGlobals": true,
+        "ignoreImports": true,
+        // sometimes needed from api
+        "ignoreDestructuring": true
+      }
+    ],
+    // Prettier rules
+    //
+    "prettier/prettier": ["error"],
+    //
+    //  IMPORT RULES
+    //
+    // does not play well with our style guides
+    "import/prefer-default-export": "off",
+    "import/no-default-export": "off",
+    // bad for monorepo arch
+    "import/no-extraneous-dependencies": "off",
+    // makes grouping harder
+    "import/newline-after-import": "warn",
+    // make sure imports are resolved
+    "import/no-unresolved": "warn",
+    // makes code cleaner this way
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "ts": "never",
+        "tsx": "never",
+        "js": "never",
+        "jsx": "never"
+      }
+    ],
+    //
+    //  TS RULES
+    //
+    // not necessary @typescript-eslint/explicit-module-boundary-types will protect us
+    "@typescript-eslint/explicit-function-return-type": "off",
+    // ts counterparts of eslint base rules
+    "@typescript-eslint/no-use-before-define": ["error"],
+    "@typescript-eslint/dot-notation": ["error"],
+    "@typescript-eslint/no-implied-eval": ["error"],
+    "@typescript-eslint/no-throw-literal": ["error"],
+    "@typescript-eslint/return-await": ["error"],
+    "@typescript-eslint/comma-dangle": ["error", "only-multiline"],
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      {
+        "vars": "all",
+        "args": "none",
+        "caughtErrors": "none"
+      }
+    ],
+    "react-hooks/exhaustive-deps": "warn",
+    "react-hooks/rules-of-hooks": "error",
+    "react/default-props-match-prop-types": [
+      "error",
+      {
+        // In TypeScript we want to know that a certain prop is defined during render
+        "allowRequiredDefaults": true
+      }
+    ],
+    // forces to destructure - easier to read
+    "react/destructuring-assignment": 2,
+    // off due to ts
+    "react/forbid-prop-types": "off",
+    // makes code really ugly
+    "react/jsx-curly-brace-presence": "off",
+    // we use TS so .tsx is default
+    "react/jsx-filename-extension": "off",
+    // Prefer shorthand always - works nice with react 17
+    "react/jsx-fragments": "error",
+    // disabled since spread makes code much cleaner
+    "react/jsx-props-no-spreading": "off",
+    // enforced to avoid costly mistakes
+    "react/no-array-index-key": "error",
+    // we use certain text editors and often its required
+    "react/no-danger": "off",
+    // avoids costly mistakes
+    "react/no-direct-mutation-state": "error",
+    // let developers choose whats right
+    "react/require-default-props": "off",
+    // not relevant
+    "react/sort-prop-types": "off",
+    // not important
+    "react/state-in-constructor": "off",
+    // makes code much cleaner
+    "react/jsx-boolean-value": "error",
+    // a bit wired in day to day use
+    "react/prop-types": "off",
+    // helps avoid small mistakes
+    "react/no-unescaped-entities": "warn",
+    // disabled due to bad readability
+    "react/jsx-one-expression-per-line": "off",
+    // keys should be required
+    "react/jsx-key": "error",
+    // just warn do not inforce
+    "react/prefer-stateless-function": 1,
+    // just warning is enough
+    "react/no-typos": "warn",
+    // not needed
+    "react/jsx-uses-react": "off",
+    // not needed
+    "react/button-has-type": "off",
+    // does not play well with ts
+    "react/no-unused-prop-types": "off",
+    // not required since react 17
+    "react/react-in-jsx-scope": "off",
+    // makes code more readable
+    "react/jsx-wrap-multilines": [
+      "error",
+      {
+        "declaration": "parens-new-line",
+        "assignment": "parens-new-line",
+        "return": "parens-new-line",
+        "arrow": "parens-new-line",
+        "condition": "parens-new-line",
+        "logical": "ignore",
+        "prop": "parens-new-line"
+      }
+    ]
+  }
+}

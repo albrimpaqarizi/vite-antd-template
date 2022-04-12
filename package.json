@@ -8,6 +8,8 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "type-check": "tsc",
+    "lint:check": "next lint",
+    "lint": "eslint --ignore-path .gitignore \"src/**/*.+(ts|js|jsx|tsx)\" --cache --fix",
     "prettier": "prettier --ignore-path .gitignore \"src/**/*.+(ts|js|jsx|tsx)\" --write",
     "prettier:check": "prettier --config .prettierrc \"src/**/*.+(ts|js|jsx|tsx)\" --check",
     "prepare": "husky install"
@@ -23,11 +25,18 @@
   "devDependencies": {
     "@commitlint/cli": "^16.2.3",
     "@commitlint/config-conventional": "^16.2.1",
-    "@types/react": "^17.0.33",
+    "@types/react": "^17.0.44",
     "@types/react-dom": "^17.0.10",
-    "@typescript-eslint/eslint-plugin": "^5.9.1",
-    "@typescript-eslint/parser": "^5.9.1",
+    "@typescript-eslint/eslint-plugin": "^5.19.0",
+    "@typescript-eslint/parser": "^5.19.0",
     "@vitejs/plugin-react": "^1.0.7",
+    "eslint": "^8.13.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.29.4",
+    "eslint-plugin-react-hooks": "^4.4.0",
     "husky": "^7.0.4",
     "less": "^4.1.2",
     "lint-staged": "^12.3.7",
@@ -39,6 +48,7 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
+      "npm run lint",
       "npm run prettier"
     ],
     "*.{json,md}": [
