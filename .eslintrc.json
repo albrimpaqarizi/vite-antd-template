@@ -8,7 +8,9 @@
     "plugin:react/recommended",
     "standard",
     "plugin:react-hooks/recommended",
-    "plugin:import/typescript"
+    "plugin:import/typescript",
+    "plugin:unicorn/recommended",
+    "plugin:sonarjs/recommended"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -32,7 +34,15 @@
       "version": "detect"
     }
   },
-  "plugins": ["react", "@typescript-eslint", "prettier", "react-hooks", "import"],
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "prettier",
+    "react-hooks",
+    "import",
+    "unicorn",
+    "sonarjs"
+  ],
   "rules": {
     //  ESLINT RULES
     //
@@ -204,6 +214,88 @@
         "logical": "ignore",
         "prop": "parens-new-line"
       }
-    ]
+    ],
+    // UNICORN RULES
+    //
+    // against our style
+    "unicorn/consistent-function-scoping": "off",
+    "unicorn/filename-case": "off",
+    // sometimes null is exactly what we need
+    "unicorn/no-null": "off",
+    // nope makes code less readable
+    "unicorn/explicit-length-check": "off",
+    // handled differently
+    "unicorn/import-index": "off",
+    // handled differently
+    "unicorn/import-style": "off",
+    // we love forEach
+    "unicorn/no-array-for-each": "off",
+    // handy from time to time
+    "unicorn/no-array-reduce": "off",
+    // edge cases
+    "unicorn/no-for-loop": "off",
+    // good for node not needed in react
+    "unicorn/no-instanceof-array": "off",
+    // against our code style
+    "unicorn/no-keyword-prefix": "off",
+    // prevents catastrophic issues with regex
+    "unicorn/no-unsafe-regex": "error",
+    // not necessary
+    "unicorn/prefer-math-trunc": "off",
+    // not necessary
+    "unicorn/prefer-module": "off",
+    // node related
+    "unicorn/prefer-node-protocol": "off",
+    // not necessary
+    "unicorn/prefer-number-properties": "off",
+    // makes code much harder to read
+    "unicorn/prefer-prototype-methods": "off",
+    // not necessary to our codestyle
+    "unicorn/prevent-abbreviations": "off",
+    //
+    // SonarJS rules
+    //
+    // all branches in a conditional structure should not have exactly the same implementation
+    "sonarjs/no-all-duplicated-branches": "error",
+    // collection elements should not be replaced unconditionally
+    "sonarjs/no-element-overwrite": "warn",
+    // empty collections should not be accessed or iterated
+    "sonarjs/no-empty-collection": "warn",
+    // function calls should not pass extra arguments
+    "sonarjs/no-extra-arguments": "error",
+    // related "if/else if" statements should not have the same condition
+    "sonarjs/no-identical-conditions": "warn",
+    // identical expressions should not be used on both sides of a binary operator
+    "sonarjs/no-identical-expressions": "warn",
+    // return values from functions without side effects should not be ignored
+    "sonarjs/no-ignored-return": "warn",
+    // loops with at most one iteration should be refactored
+    "sonarjs/no-one-iteration-loop": "error",
+    // the output of functions that don't return anything should not be used
+    "sonarjs/no-use-of-empty-return-value": "error",
+    // non-existent operators '=+', '=-' and '=!' should not be used
+    "sonarjs/non-existent-operator": "warn",
+    // cognitive Complexity of functions should not be too high
+    "sonarjs/cognitive-complexity": ["error", 15],
+    // "switch" statements should not have too many "case" clauses
+    "sonarjs/max-switch-cases": ["error", 10],
+    // collapsible "if" statements should be merged
+    "sonarjs/no-collapsible-if": "warn",
+    // collection sizes and array length comparisons should make sense
+    "sonarjs/no-collection-size-mischeck": "warn",
+    // string literals should not be duplicated
+    "sonarjs/no-duplicate-string": ["error", 5],
+    // boolean expressions should not be gratuitous
+    "sonarjs/no-gratuitous-expressions": "error",
+    // functions should not have identical implementations
+    "sonarjs/no-identical-functions": "warn",
+    // conditionals should start on new lines
+    "sonarjs/no-same-line-conditional": "error",
+    // collection and array contents should be used
+    "sonarjs/no-unused-collection": "warn",
+    // "catch" clauses should do more than rethrow
+    "sonarjs/no-useless-catch": "warn",
+    // object literal syntax should be used
+    "sonarjs/prefer-object-literal": "warn"
   }
 }

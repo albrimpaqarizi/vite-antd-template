@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Button } from 'antd';
 import logo from './assets/logo.svg';
 
-export const App = () => {
+const App = () => {
   const [count, setCount] = useState(0);
 
   return (
@@ -41,3 +41,5 @@ export const App = () => {
     </div>
   );
 };
+
+export default App;
