@@ -10,7 +10,10 @@
     "plugin:react-hooks/recommended",
     "plugin:import/typescript",
     "plugin:unicorn/recommended",
-    "plugin:sonarjs/recommended"
+    "plugin:sonarjs/recommended",
+    "plugin:eslint-comments/recommended",
+    "plugin:promise/recommended",
+    "plugin:jsx-a11y/recommended"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -41,7 +44,8 @@
     "react-hooks",
     "import",
     "unicorn",
-    "sonarjs"
+    "sonarjs",
+    "jsx-a11y"
   ],
   "rules": {
     //  ESLINT RULES
