@@ -12,7 +12,7 @@
     "lint": "eslint --ignore-path .gitignore \"src/**/*.+(ts|js|jsx|tsx)\" --cache --fix",
     "prettier": "prettier --ignore-path .gitignore \"src/**/*.+(ts|js|jsx|tsx)\" --write",
     "prettier:check": "prettier --config .prettierrc \"src/**/*.+(ts|js|jsx|tsx)\" --check",
-    "prepare": "husky install"
+    "prepare": "husky install && chmod ug+x .husky/*"
   },
   "dependencies": {
     "@ant-design/icons": "^4.7.0",

@@ -27,7 +27,7 @@ const App = () => {
           >
             Learn React
           </a>
-          {' | '}
+          {'    |    '}
           <a
             className="text-green-400"
             href="https://vitejs.dev/guide/features.html"
