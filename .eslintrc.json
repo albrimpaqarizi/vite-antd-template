@@ -6,7 +6,7 @@
   },
   "extends": [
     "plugin:react/recommended",
-    "airbnb",
+    "standard",
     "plugin:react-hooks/recommended",
     "plugin:import/typescript"
   ],
@@ -66,6 +66,7 @@
     "no-throw-literal": "off",
     "no-return-await": "off",
     "comma-dangle": "off",
+    "semi": "off",
     "no-unused-vars": "off",
     // consistent with prettier
     "max-len": [
