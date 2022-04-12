@@ -1,27 +1,24 @@
 {
+  "extends": "./tsconfig.path.json",
   "compilerOptions": {
     "target": "ESNext",
-    "useDefineForClassFields": true,
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "allowJs": false,
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "types": ["vite/client"],
+    "allowJs": true,
     "skipLibCheck": false,
     "esModuleInterop": false,
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "module": "ESNext",
-    "moduleResolution": "Node",
+    "noFallthroughCasesInSwitch": true,
+    "module": "esnext",
+    "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "composite": true,
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["src/*"],
-      "~components/*": ["src/components/*"]
-    }
+    "composite": false
   },
-  "include": [".", "vite.config.ts", "vite-env.d.ts"],
+  "include": ["./src", "vite.config.ts", "postcss.config.js", "tailwind.config.js"],
   "exclude": ["node_modules"]
 }

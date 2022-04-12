@@ -1,7 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import './styles/antd-customized.less';
+
+// styles
+import './styles/main.scss';
+import './styles/vendor/antd-customized.less';
+
+// internal
 import App from './App';
 
 ReactDOM.render(

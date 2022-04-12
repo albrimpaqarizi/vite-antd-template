@@ -4,9 +4,15 @@ import vitePluginImp from 'vite-plugin-imp';
 import * as path from 'path';
 import tsconfigPaths from 'vite-tsconfig-paths';
 import rollupReplace from '@rollup/plugin-replace';
+import EnvironmentPlugin from 'vite-plugin-environment';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  build: {
+    outDir: 'build',
+    manifest: true,
+  },
+  publicDir: 'public',
   plugins: [
     react(),
     tsconfigPaths(),
@@ -27,6 +33,7 @@ export default defineConfig({
         'process.env.NODE_ENV': JSON.stringify('development'),
       },
     }),
+    EnvironmentPlugin(['NODE_ENV', 'REACT_APP_NAME']),
   ],
   resolve: {
     alias: {
