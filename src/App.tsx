@@ -18,6 +18,7 @@ const App = () => {
         <p>
           Edit <code>App.tsx</code> and save to test HMR updates.
         </p>
+        <p>test</p>
         <p>
           <a
             className="text-sky-400"
