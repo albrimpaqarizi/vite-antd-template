@@ -1,2 +1,3 @@
 #!/bin/bash
 exec < /dev/tty && node_modules/.bin/cz --hook || trueexec < /dev/tty && git cz --hook || true
+npx devmoji -e --lint
