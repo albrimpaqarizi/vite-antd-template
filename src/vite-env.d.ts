@@ -2,6 +2,7 @@
 
 interface ImportMetaEnvironment {
   readonly NODE_ENV: string;
-  readonly VITE_APP_NAME: string;
+  readonly REACT_APP_NAME: string;
+  readonly API_URL: string;
   // more env variables...
 }

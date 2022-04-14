@@ -1,30 +1,19 @@
-import React from 'react';
+import { Suspense, StrictMode } from 'react';
 import ReactDOM from 'react-dom';
 
-// styles
-import './styles/main.scss';
-import './styles/vendor/antd-customized.less';
+import { QueryClientProvider } from 'react-query';
 
-// internal
 import App from './App';
-import { QueryClient, QueryClientProvider } from 'react-query';
-import { ReactQueryDevtools } from 'react-query/devtools';
-
-// Create a client
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      refetchOnWindowFocus: false,
-    },
-  },
-});
+import { queryClient } from './react-query/config/client';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <QueryClientProvider client={queryClient}>
-      <App />
-      <ReactQueryDevtools initialIsOpen />
-    </QueryClientProvider>
-  </React.StrictMode>,
+  <StrictMode>
+    <Suspense fallback={<div>Loading...</div>}>
+      <QueryClientProvider client={queryClient}>
+        <App />
+        {/* {process.env.NODE_ENV === 'development' && <ReactQueryDevtools />} */}
+      </QueryClientProvider>
+    </Suspense>
+  </StrictMode>,
   document.querySelector('#root'),
 );

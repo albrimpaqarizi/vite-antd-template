@@ -33,7 +33,7 @@ export default defineConfig({
         'process.env.NODE_ENV': JSON.stringify('development'),
       },
     }),
-    EnvironmentPlugin(['NODE_ENV', 'REACT_APP_NAME']),
+    EnvironmentPlugin(['NODE_ENV', 'REACT_APP_NAME', 'API_URL']),
   ],
   resolve: {
     alias: {
@@ -43,6 +43,7 @@ export default defineConfig({
       '~organisms': resolve(__dirname, 'src/components/organisms'),
       '~templates': resolve(__dirname, 'src/components/templates'),
       '~pages': resolve(__dirname, 'src/pages'),
+      '~utils': resolve(__dirname, 'src/utils'),
     },
   },
   css: {

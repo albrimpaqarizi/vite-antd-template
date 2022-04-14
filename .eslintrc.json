@@ -105,9 +105,10 @@
         "ignoreDestructuring": true
       }
     ],
+    "indent": ["error", 2, { "SwitchCase": 1 }],
     // Prettier rules
     //
-    "prettier/prettier": ["error"],
+    "prettier/prettier": "error",
     //
     //  IMPORT RULES
     //
