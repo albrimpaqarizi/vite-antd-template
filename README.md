@@ -90,7 +90,7 @@ You can visit <a href="http://localhost:3000">http://localhost:3000</a> to view 
 1. [Sass](https://sass-lang.com/)
 1. [Ant Design](https://ant.design/)
 1. [Atomic Pattern ](https://atomicdesign.bradfrost.com/chapter-2/)
-1. [Commitizen](https://commitizen-tools.github.io/commitizen/)
+1. [React-query](https://react-query.tanstack.com/)
 
 ## Structure
 

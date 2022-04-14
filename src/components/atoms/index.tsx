@@ -1,1 +1,1 @@
-export * from './TextDemo';
+export * from './TextDemo/TextDemo';

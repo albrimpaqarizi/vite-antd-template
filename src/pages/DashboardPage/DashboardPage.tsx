@@ -11,8 +11,12 @@ const DashboardPage = (): ReactElement => {
 
   return (
     <div className="text-center">
-      <header className="flex flex-col items-center justify-center min-h-screen text-base text-white">
-        <img src={logo} className="pointer-events-none h-44 w-44 animate-spin-slow" alt="logo" />
+      <header className="tw-flex tw-flex-col tw-items-center tw-justify-center tw-min-h-screen tw-text-base tw-text-white">
+        <img
+          src={logo}
+          className="tw-pointer-events-none tw-h-44 tw-w-44 tw-animate-spin-slow"
+          alt="logo"
+        />
         <p>Hello Vite + React!</p>
 
         <TextDemo>
@@ -20,7 +24,7 @@ const DashboardPage = (): ReactElement => {
         </TextDemo>
         <p>
           <a
-            className="text-sky-400"
+            className="tw-text-sky-400"
             href="https://reactjs.org"
             target="_blank"
             rel="noopener noreferrer"
@@ -29,7 +33,7 @@ const DashboardPage = (): ReactElement => {
           </a>
           {'    |    '}
           <a
-            className="text-green-400"
+            className="tw-text-green-400"
             href="https://vitejs.dev/guide/features.html"
             target="_blank"
             rel="noopener noreferrer"
