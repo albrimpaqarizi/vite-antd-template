@@ -98,6 +98,8 @@ You can visit <a href="http://localhost:3000">http://localhost:3000</a> to view 
 
 [Learn more](https://github.com/danilowoz/react-atomic-design)
 
+- :file_folder: assets
+  - :file_folder: fonts
 - :file_folder: components
   - :file_folder: atoms
   - :file_folder: molecules

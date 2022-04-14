@@ -17,6 +17,7 @@ const DashboardPage = (): ReactElement => {
           className="tw-pointer-events-none tw-h-44 tw-w-44 tw-animate-spin-slow"
           alt="logo"
         />
+
         <p>Hello Vite + React!</p>
 
         <TextDemo>
