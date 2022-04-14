@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "type-check": "tsc",
     "lint:check": "next lint",
-    "lint": "eslint --ignore-path .gitignore \"src/**/*.+(ts|js|jsx|tsx)\" --cache --fix",
+    "lint": "eslint --ignore-path .gitignore \"src/**/*.+(ts|js|jsx|tsx)\" --fix",
     "prettier": "prettier --ignore-path .gitignore \"src/**/*.+(ts|js|jsx|tsx)\" --write",
     "prettier:check": "prettier --config .prettierrc \"src/**/*.+(ts|js|jsx|tsx)\" --check",
     "prepare": "husky install && chmod ug+x .husky/*"
