@@ -11,7 +11,7 @@ const DashboardPage = (): ReactElement => {
   console.log('DashboardPage', isFetched, users);
 
   return (
-    <div className={clsx('text-green-500', isFetched && 'text-red-500')}>
+    <div>
       <header className="tw-flex tw-flex-col tw-items-center tw-justify-center tw-min-h-screen tw-text-base tw-text-white">
         <img
           src={logo}
@@ -19,7 +19,7 @@ const DashboardPage = (): ReactElement => {
           alt="logo"
         />
 
-        <p>Hello Vite + React!</p>
+        <p className={clsx('tw-text-sky-500', users && 'tw-text-red-500')}>Hello Vite + React!</p>
 
         <TextDemo>
           Edit <code>App.tsx</code> and save to test HMR updates.
