@@ -21,6 +21,7 @@ const DashboardPage = (): ReactElement => {
 
         <p className={clsx('tw-text-sky-500', users && 'tw-text-red-500')}>Hello Vite + React!</p>
 
+        <h3>Test</h3>
         <TextDemo>
           Edit <code>App.tsx</code> and save to test HMR updates.
         </TextDemo>
