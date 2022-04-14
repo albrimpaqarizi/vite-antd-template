@@ -3,6 +3,7 @@ import { TextDemo } from '~/components/atoms';
 import logo from '~/assets/logo.svg';
 
 import { useGetUsersQuery } from '~/react-query/hooks/useGetUsersQuery';
+import clsx from 'clsx';
 
 const DashboardPage = (): ReactElement => {
   const { data: users, isFetched } = useGetUsersQuery();
@@ -10,7 +11,7 @@ const DashboardPage = (): ReactElement => {
   console.log('DashboardPage', isFetched, users);
 
   return (
-    <div className="text-center">
+    <div className={clsx('text-green-500', isFetched && 'text-red-500')}>
       <header className="tw-flex tw-flex-col tw-items-center tw-justify-center tw-min-h-screen tw-text-base tw-text-white">
         <img
           src={logo}
