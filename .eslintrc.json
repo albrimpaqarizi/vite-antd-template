@@ -119,7 +119,7 @@
     // makes grouping harder
     "import/newline-after-import": "warn",
     // make sure imports are resolved
-    "import/no-unresolved": "warn",
+    // "import/no-unresolved": "off",
     // makes code cleaner this way
     "import/extensions": [
       "error",

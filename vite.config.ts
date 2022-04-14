@@ -1,10 +1,10 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import vitePluginImp from 'vite-plugin-imp';
-import * as path from 'path';
 import tsconfigPaths from 'vite-tsconfig-paths';
 import rollupReplace from '@rollup/plugin-replace';
 import EnvironmentPlugin from 'vite-plugin-environment';
+import { resolve } from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -37,8 +37,12 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'),
-      '~components': path.resolve(__dirname, './src/components'),
+      '~': resolve(__dirname, 'src'),
+      '~atoms': resolve(__dirname, 'src/components/atoms'),
+      '~molecules': resolve(__dirname, 'src/components/molecules'),
+      '~organisms': resolve(__dirname, 'src/components/organisms'),
+      '~templates': resolve(__dirname, 'src/components/templates'),
+      '~pages': resolve(__dirname, 'src/pages'),
     },
   },
   css: {
