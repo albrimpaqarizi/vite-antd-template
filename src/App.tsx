@@ -1,9 +1,6 @@
 import { ReactElement } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-// styles
-import './styles/main.scss';
-
 // pages
 import { DashboardPage, ErrorPage } from '~pages';
 

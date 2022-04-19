@@ -49,6 +49,13 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       less: {
+        modifyVars: {
+          hack: `true; @import "${resolve(
+            __dirname,
+            './',
+            'src/styles/theme/antd-customized.less',
+          )}"`,
+        },
         javascriptEnabled: true,
       },
     },
